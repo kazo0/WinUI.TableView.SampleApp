@@ -18,6 +18,7 @@
     <ApplicationVersion>1</ApplicationVersion>
     <UnoFeatures>
       ThemeService;
+      SkiaRenderer;
     </UnoFeatures>
   </PropertyGroup>
 
