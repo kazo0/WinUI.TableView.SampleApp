@@ -48,4 +48,18 @@
     <PackageReference Include="CommunityToolkit.WinUI.Controls.ColorPicker" Version="8.1.240916" />
     <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.1.240916" />
   </ItemGroup>
+
+  <PropertyGroup Condition="$(IsBrowserWasm) and '$(Configuration)' == 'Release' ">
+				<WasmShellMonoRuntimeExecutionMode>InterpreterAndAOT</WasmShellMonoRuntimeExecutionMode>
+				<WasmShellEmccLinkOptimization>false</WasmShellEmccLinkOptimization>
+				<WasmShellEnableEmccProfiling>true</WasmShellEnableEmccProfiling>
+
+				<!--
+				Uncomment this block to generate a profile
+				<WasmShellGenerateAOTProfile>true</WasmShellGenerateAOTProfile>
+				<WasmShellILLinkerEnabled>false</WasmShellILLinkerEnabled>
+				<UnoXamlResourcesTrimming>false</UnoXamlResourcesTrimming>
+				<WasmShellEnableJiterpreter>false</WasmShellEnableJiterpreter>
+				-->
+	</PropertyGroup>
 </Project>
