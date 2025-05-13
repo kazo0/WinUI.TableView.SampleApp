@@ -22,6 +22,10 @@
     </UnoFeatures>
   </PropertyGroup>
 
+    <PropertyGroup Condition="$(IsBrowserWasm) and '$(Configuration)'=='Release' and '$(WasmShellMonoRuntimeExecutionMode)'=='InterpreterAndAOT'">
+	    <WasmAotFileName>aot.profile</WasmAotFileName>
+    </PropertyGroup>
+
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
   </ItemGroup>
@@ -56,10 +60,11 @@
 
 				<!--
 				Uncomment this block to generate a profile
-				<WasmShellGenerateAOTProfile>true</WasmShellGenerateAOTProfile>
+				
+				-->
+                <WasmShellGenerateAOTProfile>true</WasmShellGenerateAOTProfile>
 				<WasmShellILLinkerEnabled>false</WasmShellILLinkerEnabled>
 				<UnoXamlResourcesTrimming>false</UnoXamlResourcesTrimming>
 				<WasmShellEnableJiterpreter>false</WasmShellEnableJiterpreter>
-				-->
 	</PropertyGroup>
 </Project>
